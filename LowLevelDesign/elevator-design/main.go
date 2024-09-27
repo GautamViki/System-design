@@ -13,16 +13,9 @@ func main() {
 	controller := elevator.NewController(e)
 
 	// Add some requests
-	req1 := model.Request{
-		Floor:     3,
-		Direction: model.Up,
-	}
-	e.AddRequest(req1)
-	req2 := model.Request{
-		Floor:     7,
-		Direction: model.Up,
-	}
-	e.AddRequest(req2)
+	e.AddRequest(model.Request{Floor: 3, Direction: model.Up})
+	e.AddRequest(model.Request{Floor: 7, Direction: model.Up})
+	e.AddRequest(model.Request{Floor: 1, Direction: model.Down})
 
 	controller.ProcessRequests()
 
