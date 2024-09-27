@@ -35,15 +35,18 @@ func (e *Elevator) Move() {
 
 	// Move towards the first request
 	target := e.request[0].Floor
+	movement := ""
 	if e.currentFloor < target {
 		e.direction = model.Up
+		movement = "up"
 		e.currentFloor++
 	} else if e.currentFloor > target {
 		e.direction = model.Down
+		movement = "down"
 		e.currentFloor--
 	}
 
-	fmt.Printf("Elevator is at floor %d\n", e.currentFloor)
+	fmt.Printf("Elevator is at floor %d and going %s\n", e.currentFloor, movement)
 
 	// Simulate some time to move between floors
 	time.Sleep(1 * time.Second)
