@@ -7,13 +7,10 @@ type Controller struct {
 }
 
 // NewController initializes a new controller.
-// func NewController(e *Elevator) *Controller {
-// 	return &Controller{
-// 		elevator: e,
-// 	}
-// }
 func NewController(e *Elevator) *Controller {
-    return &Controller{elevator: e}
+	return &Controller{
+		elevator: e,
+	}
 }
 
 // ProcessRequests continuously handles elevator requests.
