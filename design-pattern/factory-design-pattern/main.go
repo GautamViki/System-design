@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // Shape interface defining a method to calculate area
 type Shape interface {
@@ -42,7 +44,6 @@ func (sf *ShapeFactory) CreateShape(shapeType string, dimensions ...float64) Sha
 
 func main() {
 	factory := &ShapeFactory{}
-
 	// Creating a circle
 	circle := factory.CreateShape("circle", 5)
 	fmt.Printf("Circle Area: %.2f\n", circle.GetArea())
